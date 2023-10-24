@@ -6,8 +6,6 @@ import { Box, Paper } from '@mui/material';
 function App() {
   const options = [1, 2, 3, 4, 5, 6];
   const [currentStatus, setCurrentStatus] = useState(options[0]);
-  const [results, setResults] = useState([]);
-  const [rotate, setRotate] = useState();
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#FFDFDF', height: '100vh' }}>
