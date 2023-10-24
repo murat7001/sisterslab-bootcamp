@@ -56,5 +56,15 @@ console.log(
 );
 
 //Pokemon dizisinde, her türdeki Pokemon'ların deneyim puanlarının ortalamasını hesaplamak istiyorsunuz.
-const typeExperienceAverages = pokemons.reduce((total, pokemon) => total + pokemon.experience, 0)/ pokemons.length;
-console.log(typeExperienceAverages);
+const typeExperienceAverages3 = Object.values(
+  pokemons.reduce((result, pokemon) => {
+    result[pokemon.type] = result[pokemon.type] || { totalExperience: 0, count: 0 };
+    result[pokemon.type].totalExperience += pokemon.experience;
+    result[pokemon.type].count += 1;
+    return result;
+  }, {})
+).map(typeData => ({
+  type: typeData.totalExperience,
+  averageExperience: typeData.totalExperience / typeData.count
+}));
+
