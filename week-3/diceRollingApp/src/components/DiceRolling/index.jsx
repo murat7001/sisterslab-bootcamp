@@ -22,7 +22,7 @@ function DiceRolling({ options, setCurrentStatus, currentStatus}) {
         <div style={{marginTop: '10px'}}>
             {loading && <div style={{fontSize: '24px'}}>Loading...</div>}
             {!loading && <div style={{fontSize: '24px'}}>Dice: {`${currentStatus}`}</div>}
-            <Button color='success' size="medium" style={{marginTop: '16px', marginBottom: '10px'}} onClick={helloHandler} variant="contained">Random</Button>
+            <Button  size="medium" style={{color: 'black',backgroundColor: "#F3F0CA", marginTop: '16px', marginBottom: '10px'}} onClick={helloHandler} variant="contained">Random</Button>
         </div>
     );
 }
