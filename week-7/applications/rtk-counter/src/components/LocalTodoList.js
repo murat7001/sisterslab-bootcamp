@@ -1,4 +1,4 @@
-import { addTodo, removeTodo, completeTodo } from '@/store/localTodoSlice';
+import { addTodo, removeTodo, completeTodo, getTodos } from '@/store/localTodoSlice';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -9,12 +9,12 @@ const TodoList = () => {
     const [todoText, setTodoText] = useState('');
 
     useEffect(() => {
-        console.log(todos);
-      }, [todos]);
+        dispatch(getTodos());
+    }, [dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addTodo({title: todoText, id: Date.now(), completed: false }));
+        dispatch(addTodo({ title: todoText, id: Date.now(), completed: false }));
         setTodoText('');
     };
 
